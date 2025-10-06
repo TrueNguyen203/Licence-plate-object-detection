@@ -8,18 +8,6 @@ from tools.get_model import get_model
 from torchmetrics.detection.mean_ap import MeanAveragePrecision
 from sklearn.metrics import precision_score, recall_score
 
-# Set up agnostic device code
-device = 'cuda' if torch.cuda.is_available else 'cpu'
-
-# Setup model path
-MODEL_PATH = Path("models")
-MODEL_PATH.mkdir(parents=True, # create parent directories if needed
-                 exist_ok=True # if models directory already exists, don't error
-)
-
-# Create model save path
-MODEL_NAME = "model-with-anchor-nms.pth"
-MODEL_SAVE_PATH = MODEL_PATH / MODEL_NAME
 
 # Set up agnostic device code
 device = 'cuda' if torch.cuda.is_available else 'cpu'

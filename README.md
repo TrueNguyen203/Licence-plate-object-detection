@@ -63,8 +63,15 @@ Data format: </br>
 ## Evaluation of the model:
 * Loss dict & Average loss perbatch of 4:
   <img src='images/model-anchor-nms-loss.PNG'/>
-* mAp (Mean Average Precision) Score with IoU threshold 0.5 and 0.75: </br>
-  `'map_50': tensor(0.9798), 'map_75': tensor(0.8414)`
+* Evaluation with the IoU threshold of 0.5 and 0.75: </br>
+  `mAP@0.5 = 0.9892` </br>
+  `Precision@0.5 = 0.9886` </br>
+  `Recall@0.5 = 0.9875` </br>
+
+  `mAP@0.75 = 0.8473` </br>
+  `Precision@0.75 = 0.8729` </br>
+  `Recall@0.75 = 0.8719` </br>
+
 * Example images of the correct prediction: </br>
   <img src='images/model-anchor-nms-img1.PNG'/> </br>
   <img src='images/model-anchor-nms-img2.PNG'/> </br>
@@ -93,7 +100,7 @@ Data format: </br>
   Training: `python trainning.py` </br>
   Calculate `loss_dict()`: `python inference_loss_dict.py` </br>
   Calculate `mAP score`: `python inference_mAP.py` </br>
-
+  Calculate `Percision and Recall`: `python inference_percision_recall.py` </br>
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
