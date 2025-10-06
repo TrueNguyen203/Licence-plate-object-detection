@@ -1,4 +1,4 @@
-# Lisence plate object detection
+# Licence plate object detection
 
 ## Table of Contents
 - [Description](#description)
@@ -12,7 +12,7 @@
 - [Author](#author)
 
 ## Description
-This is one of my project in university. The goal of this project is to make a regression deep learning model that can predict the bounding box of lisence plates on cars.
+This is one of my project in university. The goal of this project is to make a regression deep learning model that can predict the bounding box of license plates on cars.
 
 ## Data description
 The data a public dataset on hugging face which you can find in this link 
@@ -27,7 +27,7 @@ Data format: </br>
 ## My Approach
 * For this object detection problem, I am using `fasterrcnn_restnet_50_fpn` model with the pretrained weights on the COCO dataset.
 * The model data architecture is the combination of the `resnet-50` (redidual netwrok) backbone and the `FPN` (Feature pyramid network) head
-* I have recustomized the aspect ratio for lisence plate since it has relatively bigger width compare to the height: </br>
+* I have recustomized the aspect ratio for license plate since it has relatively bigger width compare to the height: </br>
     `(anchor_sizes = ((32,), (64,), (128,), (256,), (512,)))`</br>
     `aspect_ratios = ((0.25, 0.5, 1.0, 2.0, 4.0),) * len(anchor_sizes)`
 * Loss of the model will be the total of `{'loss_classifier', 'loss_box_reg', 'loss_objectness', 'loss_rpn_box_reg'} `
@@ -78,8 +78,8 @@ Data format: </br>
   <img src='images/model-anchor-nms-falseimg3.PNG'/> </br>
  
 ## Limitations:
-* Misprediction on images that have lisence-like character sequences
-* The model is only train for 1 lisence plate per image `(iscrowd: 0)`
+* Misprediction on images that have license-like character sequences
+* The model is only train for 1 license plate per image `(iscrowd: 0)`
 
 ## How to run the code:
 * Option 1: Using the **notebook** </br>
@@ -88,7 +88,7 @@ Data format: </br>
   https://drive.google.com/drive/folders/1w42VspjwLaoxf7Gt0TtQB03LiNGMWz28?usp=sharing
   </br>
 * Option 2: Run the code **locally** </br>
-  Clone the repository: `git clone https://github.com/TrueNguyen203/Lisence-plate-object-detection.git` </br>
+  Clone the repository: `git clone https://github.com/TrueNguyen203/License-plate-object-detection.git` </br>
   Create the virtual environment and install **requirementst.txt**: `pip install -r requirements.txt` </br>
   Training: `python trainning.py` </br>
   Calculate `loss_dict()`: `python inference_loss_dict.py` </br>
